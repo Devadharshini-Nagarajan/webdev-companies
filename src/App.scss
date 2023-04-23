@@ -1,0 +1,52 @@
+.column-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.userform-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.userform-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 17rem;
+  .ant-btn {
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+.productform-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  > div {
+    padding: 0 50px;
+  }
+  
+  .upload-div {
+    display: flex;
+    justify-content: center;
+    .ant-upload.ant-upload-select, .ant-upload-list.ant-upload-list-picture-circle .ant-upload-list-item-container {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+}
+.productform-btn {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 7rem;
+
+  .ant-btn {
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+  }
+}

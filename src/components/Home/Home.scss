@@ -1,0 +1,36 @@
+.home-content {
+    align-items: center;
+    justify-content: space-between;
+    height: 95vh;
+    // padding: 0 100px;
+    width: 100%;
+
+    background-image: url("../../doc/imgs/greenbg.jpg");
+    background-size: cover;
+
+    display: grid;
+
+    .card-items {
+        height: 16rem;
+        width: 23rem;
+        cursor: pointer;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                height: 90px;
+                width: 90px;
+            }
+            .title {
+                font-weight: 900;
+                font-size: 24px;
+                font-family: auto;
+                letter-spacing: 0.7px;
+            }
+            .description {
+                text-align: center;
+            }
+        }
+    }
+}

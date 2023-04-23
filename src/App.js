@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Router from "./router";
+import { ConfigProvider } from "antd";
+
+import Context from "./components/Context";
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#207d96",
+          },
+        }}
+      >
+        <div className="App">
+          <Router />
+        </div>
+      </ConfigProvider>
+    </Context>
   );
 }
 

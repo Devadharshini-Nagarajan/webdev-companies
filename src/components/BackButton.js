@@ -11,8 +11,8 @@ function BackButton(props) {
   return (
     <div>
       <Link
-        to={props.path}
-        // onClick={goBack}
+        // to={props.path}
+        onClick={goBack}
         style={{ textDecoration: "none", color: "#1677ff", fontWeight: "600" }}
       >
         <div style={{ display: "flex", margin: "0 20px 20px 20px" }}>

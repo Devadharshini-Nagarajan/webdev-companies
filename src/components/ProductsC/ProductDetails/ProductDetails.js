@@ -71,8 +71,8 @@ function ProductDetails() {
   const onFinish = (values) => {
     values.productid = details.productid;
     values.image = "";
-    values.createdby = details.createdat;
-    values.createdat = details.createdby;
+    values.createdby = state.login.username;
+    values.createdat = details.createdat;
     values.company = details.company;
     let newFile = values.newFile?.originFileObj ?? null;
     delete values["newFile"];
@@ -127,8 +127,16 @@ function ProductDetails() {
       .finally((_) => setLoading(false));
   };
 
-  const getDate = () => {
-    return dayjs(details.createdat).format("DD MMM YYYY");
+  const getDate = (date) => {
+    return dayjs(date).format("DD MMM YYYY HH:mm");
+  };
+
+  const getDiscount = () => {
+    if (details.price && details.discount)
+      return (
+        parseInt(details?.price) *
+        ((100 - parseInt(details?.discount)) / 100)
+      )?.toFixed(2);
   };
 
   return (
@@ -175,33 +183,39 @@ function ProductDetails() {
               <span>{details.brand}</span>
             </h4>
             <Rate disabled value={details.rating} />
-            <small> 55 Reviews</small>
+            {/* <small> 55 Reviews</small> */}
             <div style={{ marginTop: "15px" }}>
-              <strong>$ {details.price}</strong>
-              {/* add discount logic */}
-
+              <strong>${getDiscount()}</strong>&nbsp;&nbsp;
+              <span style={{ fontFamily: "fantasy" }}>
+                (Discount: {details.discount}%)
+              </span>
+              <p>Original Amount $ {details.price}</p>
               <p>{details.sold} sold out</p>
             </div>
 
-            <span style={{ marginTop: "10px" }}>{details.description}</span>
+            <h2>About the product</h2>
             <div className="set2">
-              <div className="column-flex">
-                <strong>Category</strong>
+              <div>
+                <b>Description: &nbsp;&nbsp;</b>
+                <span>{details.description}</span>
+              </div>
+              <div>
+                <b>Category: &nbsp;</b>
                 <span>{details.category}</span>
               </div>
-              <div className="column-flex">
-                <strong>Standard size</strong>
+              <div>
+                <b>Standard size: &nbsp;</b>
                 <span>{details.quantityml} ml</span>
               </div>
-            </div>
-            {state.login.isAdmin && (
+              {state.login.isAdmin && (
+                <div>
+                  <b>Created by:</b>&nbsp; {details.createdby}
+                </div>
+              )}
               <div>
-                <b>Created by</b>&nbsp; {details.createdby}
+                <b>Created on:</b>&nbsp; {getDate(details.createdat)}
               </div>
-            )}
-            <span style={{ fontFamily: "initial" }}>
-              Created on: {getDate()}
-            </span>
+            </div>
           </div>
         </div>
       ) : (

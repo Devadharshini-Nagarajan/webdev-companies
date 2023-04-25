@@ -71,7 +71,9 @@ function ProductDetails() {
   const onFinish = (values) => {
     values.productid = details.productid;
     values.image = "";
-    values.createdby = state.login.username;
+    values.createdby = details.createdby
+      ? details.createdby
+      : state.login.username;
     values.createdat = details.createdat;
     values.company = details.company;
     let newFile = values.newFile?.originFileObj ?? null;

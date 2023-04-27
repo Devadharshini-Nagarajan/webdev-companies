@@ -79,9 +79,9 @@ const Login = () => {
                   src={`${process.env.PUBLIC_URL}/assets/imgs/beyou.png`}
                   alt="logo"
                 />
-                <span className="heading" style={{ width: "100%" }}>
-                  Blah and Blah Management App
-                </span>
+                {/* <span className="heading" style={{ width: "100%" }}>
+                  Skincare Management App
+                </span> */}
                 <span className="content">
                   Welcome to the World of Skincare. Login using your credentials
                 </span>

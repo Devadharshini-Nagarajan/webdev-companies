@@ -1,7 +1,11 @@
-### Date Aggregation and Secure Interconnection System                                                                                       	  
+### Data Aggregation and Secure Interconnection System                                                                                       	  
 - Developed a robust system that aggregates data from multiple entities, ensures secure intercompany communication,
 and provides a user-friendly interface using ReactJS and Spring MVC.
-Utilized Spring Boot,Discovery Server, Spring REST, Spring JPA, and a SQL, MongoDB database for efficient data management. 
+Utilized Spring Boot,Discovery Server, Spring REST, Spring JPA, and a SQL, MongoDB database for efficient data management.
+
+<img width="1440" alt="image" src="https://github.com/Devadharshini-Nagarajan/webdev-companies/assets/113491692/ad993306-2e99-4324-a3db-c7ba0b50f34a">
+
+### Architecture 
 
 <img width="514" alt="image" src="https://github.com/Devadharshini-Nagarajan/webdev-springboot-all/assets/113491692/46e75814-887a-4e86-9e5e-2271f72df3dd">
 
